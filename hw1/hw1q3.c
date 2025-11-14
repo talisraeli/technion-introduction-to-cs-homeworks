@@ -12,13 +12,9 @@ int main() {
         return 0;
     }
 
-    // initializing variables
-    int digitCount = 0, uniqueDigits = 0, digitShows[10];
-    for (int i = 0; i < 10; i++) {
-        digitShows[i] = 0;
-    }
-
-    bool areValidConditions = true;
+    // initializing digit counters
+    int n0 = 0, n1 = 0, n2 = 0, n3 = 0, n4 = 0,
+        n5 = 0, n6 = 0, n7 = 0, n8 = 0, n9 = 0;
 
     char input;
     printf("Please enter test number:\n");
@@ -35,22 +31,62 @@ int main() {
             break;
         }
 
-        digitCount++;
-        digitShows[digit]++;
-
-        // checking if this digit first shown (a new unique digit)
-        if (digitShows[digit] == 1) {
-            uniqueDigits++;
-        }
-
-        const bool isValidDigitCount = digitCount <= maxDigitCount;
-        const bool isValidUniqueDigits = uniqueDigits <= maxUniqueDigits;
-        const bool isValidDigitShows = digitShows[digit] <= maxDigitShows;
-
-        if (!isValidDigitCount || !isValidDigitShows || !isValidUniqueDigits) {
-            areValidConditions = false;
+        // increasing the counter for this digit
+        switch (digit) {
+            case 0:
+                n0++;
+                break;
+            case 1:
+                n1++;
+                break;
+            case 2:
+                n2++;
+                break;
+            case 3:
+                n3++;
+                break;
+            case 4:
+                n4++;
+                break;
+            case 5:
+                n5++;
+                break;
+            case 6:
+                n6++;
+                break;
+            case 7:
+                n7++;
+                break;
+            case 8:
+                n8++;
+                break;
+            case 9:
+                n9++;
+                break;
         }
     }
+
+    const int digitCount = n0 + n1 + n2 + n3 + n4 + n5 + n6 + n7 + n8 + n9;
+    const bool isValidDigitCount = digitCount <= maxDigitCount;
+
+    // checking for each digit if it exists in user's number
+    const int uniqueDigits =
+        (n0 > 0 ? 1 : 0) + (n1 > 0 ? 1 : 0) + (n2 > 0 ? 1 : 0) +
+        (n3 > 0 ? 1 : 0) + (n4 > 0 ? 1 : 0) + (n5 > 0 ? 1 : 0) +
+        (n6 > 0 ? 1 : 0) + (n7 > 0 ? 1 : 0) + (n8 > 0 ? 1 : 0) +
+        (n9 > 0 ? 1 : 0);
+
+    const bool isValidUniqueDigits = uniqueDigits <= maxUniqueDigits;
+
+    // checking for each digit if its shows are valid (<= max shows allowed)
+    const bool isValidDigitShows =
+        n0 <= maxDigitShows && n1 <= maxDigitShows && n2 <= maxDigitShows &&
+        n3 <= maxDigitShows && n4 <= maxDigitShows && n5 <= maxDigitShows &&
+        n6 <= maxDigitShows && n7 <= maxDigitShows && n8 <= maxDigitShows &&
+        n9 <= maxDigitShows;
+
+    const bool areValidConditions = isValidDigitCount && isValidDigitShows &&
+        isValidUniqueDigits;
 
     printf(areValidConditions
         ? "The number given meets all the conditions\n"
