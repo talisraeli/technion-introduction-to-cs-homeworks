@@ -78,15 +78,15 @@ int main() {
 
     const bool isValidUniqueDigits = uniqueDigits <= maxUniqueDigits;
 
-    // checking for each digit if its shows are valid (<= max shows allowed)
+    // checking for each digit if it's shows are valid (<= max shows allowed)
     const bool isValidDigitShows =
         n0 <= maxDigitShows && n1 <= maxDigitShows && n2 <= maxDigitShows &&
         n3 <= maxDigitShows && n4 <= maxDigitShows && n5 <= maxDigitShows &&
         n6 <= maxDigitShows && n7 <= maxDigitShows && n8 <= maxDigitShows &&
         n9 <= maxDigitShows;
 
-    const bool areValidConditions = isValidDigitCount && isValidDigitShows &&
-        isValidUniqueDigits;
+    const bool areValidConditions =
+        isValidDigitCount && isValidDigitShows && isValidUniqueDigits;
 
     printf(areValidConditions
         ? "The number given meets all the conditions\n"
