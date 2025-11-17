@@ -68,10 +68,8 @@ int main() {
 
     // checking for each digit if it exists in user's number
     const int uniqueDigits =
-        (n0 > 0 ? 1 : 0) + (n1 > 0 ? 1 : 0) + (n2 > 0 ? 1 : 0) +
-        (n3 > 0 ? 1 : 0) + (n4 > 0 ? 1 : 0) + (n5 > 0 ? 1 : 0) +
-        (n6 > 0 ? 1 : 0) + (n7 > 0 ? 1 : 0) + (n8 > 0 ? 1 : 0) +
-        (n9 > 0 ? 1 : 0);
+        (n0 > 0) + (n1 > 0) + (n2 > 0) + (n3 > 0) + (n4 > 0) +
+        (n5 > 0) + (n6 > 0) + (n7 > 0) + (n8 > 0) + (n9 > 0);
 
     const bool isValidUniqueDigits = uniqueDigits <= maxUniqueDigits;
 
