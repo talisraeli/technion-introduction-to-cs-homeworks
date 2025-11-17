@@ -21,10 +21,7 @@ int main() {
 
     // repeatedly executing the code while there is valid input
     while (scanf(" %c", &input) == 1) {
-
-        // converting the char input to int digit
-        const int digit = input - '0';
-        const bool isValidDigit = digit >= 0 && digit <= 9;
+        const bool isValidDigit = input >= '0' && input <= '9';
 
         // if it's not a digit, end the loop
         if (!isValidDigit) {
@@ -32,35 +29,35 @@ int main() {
         }
 
         // increasing the counter for this digit
-        switch (digit) {
-            case 0:
+        switch (input) {
+            case '0':
                 n0++;
                 break;
-            case 1:
+            case '1':
                 n1++;
                 break;
-            case 2:
+            case '2':
                 n2++;
                 break;
-            case 3:
+            case '3':
                 n3++;
                 break;
-            case 4:
+            case '4':
                 n4++;
                 break;
-            case 5:
+            case '5':
                 n5++;
                 break;
-            case 6:
+            case '6':
                 n6++;
                 break;
-            case 7:
+            case '7':
                 n7++;
                 break;
-            case 8:
+            case '8':
                 n8++;
                 break;
-            case 9:
+            case '9':
                 n9++;
                 break;
         }
