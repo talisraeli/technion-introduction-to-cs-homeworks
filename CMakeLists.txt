@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 4.0)
 project(Homeworks C)
 
 set(CMAKE_C_STANDARD 99)
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Werror -pedantic-errors -lm -g")
 
 add_executable(hw0q1 hw0/hw0q1.c)
 
