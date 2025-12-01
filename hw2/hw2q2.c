@@ -9,9 +9,8 @@
 #define HEALTH_AMOUNT 100
 
 int main() {
-    int values[PARTS_COUNT],
-        firstShipMarks[PARTS_COUNT],
-        secondShipMarks[PARTS_COUNT];
+    int values[PARTS_COUNT];
+    bool firstShipMarks[PARTS_COUNT], secondShipMarks[PARTS_COUNT];
 
     printf("Please enter ship's parts value:\n");
 
@@ -36,20 +35,24 @@ int main() {
 
     // getting first ship marks input
     for (int i = 0; i < PARTS_COUNT; i++) {
-        if (scanf("%d", &firstShipMarks[i]) != 1) {
+        int input;
+        if (scanf("%d", &input) != 1) {
             printf("%s", ERROR_STRING);
             return 0;
         }
+        firstShipMarks[i] = input;
     }
 
     printf("Please enter second ship's hit marks:\n");
 
     // getting second ship marks input
     for (int i = 0; i < PARTS_COUNT; i++) {
-        if (scanf("%d", &secondShipMarks[i]) != 1) {
+        int input;
+        if (scanf("%d", &input) != 1) {
             printf("%s", ERROR_STRING);
             return 0;
         }
+        secondShipMarks[i] = input;
     }
 
     int firstShipHealth = HEALTH_AMOUNT, secondShipHealth = HEALTH_AMOUNT;
