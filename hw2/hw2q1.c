@@ -29,8 +29,17 @@ int main() {
 
     const int sentenceLength = i;
 
-    // getting word input
-    for (i = 0; i < WORD_LENGTH; i++) {
+    // ignore any invalid chars before word input (like whitespaces)
+    while (scanf("%c", &input) == 1) {
+        const bool isValidInput = input >= 'a' && input <= 'z';
+        if (isValidInput) {
+            word[0] = input;
+            break;
+        }
+    }
+
+    // getting word input (starting from second letter)
+    for (i = 1; i < WORD_LENGTH; i++) {
         if (scanf("%c", &input) != 1) {
             break;
         }
